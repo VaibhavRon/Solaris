@@ -1,5 +1,6 @@
 import { useAuthStore } from "../store/authStore"
 import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
 
 export default function HomePage(){
     const{logout,user,error}=useAuthStore();
@@ -15,6 +16,7 @@ export default function HomePage(){
 
     return(
         <div>
+            <Navbar/>
            <motion.div
         initial={{opacity:0,y:40}}
         animate={{opacity:1,y:0}}
