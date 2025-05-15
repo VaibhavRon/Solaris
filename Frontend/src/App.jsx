@@ -40,7 +40,7 @@ function App() {
   console.log(isAuthenticated,user)
   return (
     <>
-      <div className='min-h-screen min-w-screen bg-gradient-to-br from-gray-800 via-blue-800 to-darkblue-800 flex justify-center items-center relative overflow-hidden' >
+      <div className='min-h-screen min-w-screen bg-gradient-to-br from-gray-800 via-green-800 to-darkgreen-800 flex justify-center items-center relative overflow-hidden' >
       <Routes>
         <Route path="/" element={
           <ProtectectedRoute><HomePage/></ProtectectedRoute>

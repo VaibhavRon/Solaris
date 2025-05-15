@@ -22,7 +22,7 @@ export default function HomePage(){
         className="max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur rounded-2xl shadow-xl"
         >
             <div className="p-8">
-            <h2 className="text-3xl py-2 font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">
+            <h2 className="text-3xl py-2 font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700">
                   Dashboard
                 </h2>
                 <motion.div

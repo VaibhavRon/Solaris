@@ -43,7 +43,7 @@ export default function ResetPage(){
         className="max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur rounded-2xl shadow-xl"
         >
             <div className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">
+                <h2 className="text-3xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500">
                    Set New Password
                 </h2>
 
