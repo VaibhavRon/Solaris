@@ -7,6 +7,9 @@ import { useEffect } from 'react'
 import HomePage from './Pages/HomePage'
 import ForgotPassword from './Pages/ForgotPassword'
 import ResetPage from './Pages/ResetPage'
+import ModelPredictor from './components/ModelPredictor'
+
+
 
 const RedirectAuthenticatedUser=({children})=>{
     const{isAuthenticated,user}=useAuthStore();
@@ -55,6 +58,7 @@ function App() {
           </RedirectAuthenticatedUser>}/>
         <Route path="/verify" element={<Verify/>}></Route>
         <Route path="/forgot-password" element={<ForgotPassword/>}></Route>
+        <Route path="/predict" element={<ModelPredictor/>}></Route>
         <Route path="/reset-password/:token" element={<RedirectAuthenticatedUser><ResetPage/></RedirectAuthenticatedUser>}/>
       </Routes>
       </div>
