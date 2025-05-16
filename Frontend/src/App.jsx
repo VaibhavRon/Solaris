@@ -9,6 +9,7 @@ import ForgotPassword from './Pages/ForgotPassword'
 import ResetPage from './Pages/ResetPage'
 import ModelPredictor from './components/ModelPredictor'
 import ESP32Dashboard from './Pages/Data'
+import Esp from './Pages/Dash'
 
 
 const RedirectAuthenticatedUser=({children})=>{
@@ -45,7 +46,7 @@ function App() {
     <>
       <div className='min-h-screen min-w-screen bg-gradient-to-br from-gray-800 via-green-800 to-darkgreen-800 flex justify-center items-center relative overflow-hidden' >
       <Routes>
-        <Route path="/" element={
+        <Route path="/home" element={
           <ProtectectedRoute><HomePage/></ProtectectedRoute>
         }/>
         <Route path="/signup" element={
@@ -61,6 +62,7 @@ function App() {
         <Route path="/predict" element={<ModelPredictor/>}></Route>
         <Route path="/reset-password/:token" element={<RedirectAuthenticatedUser><ResetPage/></RedirectAuthenticatedUser>}/>
         <Route path="/data-fetch" element={<ESP32Dashboard/>}/>
+        <Route path="/" element={<Esp/>}/>
       </Routes>
       </div>
     </>
