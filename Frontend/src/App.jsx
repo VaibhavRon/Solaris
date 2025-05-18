@@ -10,6 +10,7 @@ import ResetPage from './Pages/ResetPage'
 import ModelPredictor from './components/ModelPredictor'
 import ESP32Dashboard from './Pages/Data'
 import Esp from './Pages/Dash'
+import CarbonFootprintPage from './Pages/Carbon'
 
 
 const RedirectAuthenticatedUser=({children})=>{
@@ -63,6 +64,7 @@ function App() {
         <Route path="/reset-password/:token" element={<RedirectAuthenticatedUser><ResetPage/></RedirectAuthenticatedUser>}/>
         <Route path="/data-fetch" element={<ESP32Dashboard/>}/>
         <Route path="/" element={<Esp/>}/>
+        <Route path="/carbon" element={<CarbonFootprintPage/>}/>
       </Routes>
       </div>
     </>
