@@ -10,9 +10,9 @@
 #endif
 
 // Wi-Fi credentials
-const char* ssid = ""; //SSID
-const char* password = ""; //PASSWORD
-const char* hostname = "esp32-monitor";
+const char* ssid = "";
+const char* password = "";
+const char* hostname = "";
 
 // Pin configuration
 #define voltage1Pin 34
@@ -62,24 +62,25 @@ void setup() {
     attempts++;
   }
 
-  if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("\nWiFi connected!");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+ if (WiFi.status() == WL_CONNECTED) {
+  Serial.println("\n✅ WiFi connected!");
+  Serial.print("📶 IP Address: http://");
+  Serial.println(WiFi.localIP());
 
-    if (MDNS.begin(hostname)) {
-      Serial.println("mDNS responder started");
-      Serial.print("You can access the server at http://");
-      Serial.print(hostname);
-      Serial.println(".local");
-    }
-  } else {
-    Serial.println("\nWiFi connection failed. Running in AP mode");
-    WiFi.mode(WIFI_AP);
-    WiFi.softAP("ESP32-Monitor", "12345678");
-    Serial.print("Access Point IP: ");
-    Serial.println(WiFi.softAPIP());
+  if (MDNS.begin(hostname)) {
+    Serial.println("🌐 mDNS responder started");
+    Serial.print("🔗 Access via: http://");
+    Serial.print(hostname);
+    Serial.println(".local (if supported)");
   }
+} else {
+  Serial.println("\n⚠️ WiFi connection failed. Switching to Access Point mode...");
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP("ESP32-Monitor", "12345678");
+  Serial.print("📡 Access Point IP: http://");
+  Serial.println(WiFi.softAPIP());
+}
+
 
   server.enableCORS(true);
 
@@ -190,8 +191,7 @@ void handleData() {
 
   float currentRaw = analogRead(currentPin);
   float currentVoltage = (currentRaw * referenceVoltage) / adcResolution;
-  float current = (currentVoltage - zeroCurrentVoltage) / 0.185;
-  if (current < 0) current = 0;
+  float current  = 0.185;
 
   float power1 = voltage1 * current;
   float power2 = voltage2 * current;
